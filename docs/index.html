@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Asteroid Dodger</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <h1>Asteroid Dodger</h1>
+      <section class="hud">
+        <span>Score: <strong id="score">0</strong></span>
+        <span>Health: <strong id="health">3</strong></span>
+      </section>
+
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+
+        <div id="menuScreen" class="overlay visible">
+          <h2>Main Menu</h2>
+          <p>Move with arrow keys, WASD, or the on-screen pad. Dodge falling asteroids.</p>
+          <button id="startButton">Start Game</button>
+        </div>
+
+        <div id="gameOverScreen" class="overlay hidden">
+          <h2>Game Over</h2>
+          <p>Final Score: <strong id="finalScore">0</strong></p>
+          <button id="restartButton">Play Again</button>
+        </div>
+      </div>
+
+      <!-- On-screen D-pad for touch / mobile -->
+      <div class="dpad" id="dpad" aria-label="Directional pad">
+        <button class="dpad-btn dpad-up"   id="dpadUp"    aria-label="Up">▲</button>
+        <button class="dpad-btn dpad-left" id="dpadLeft"  aria-label="Left">◀</button>
+        <div class="dpad-btn dpad-center" aria-hidden="true"></div>
+        <button class="dpad-btn dpad-right" id="dpadRight" aria-label="Right">▶</button>
+        <button class="dpad-btn dpad-down"  id="dpadDown"  aria-label="Down">▼</button>
+      </div>
+    </main>
+
+    <script src="./engine.js"></script>
+    <script src="./game.js"></script>
+  </body>
+</html>

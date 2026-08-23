@@ -1,70 +1,30 @@
-# Asteroid Dodger (Browser Game)
+# Gaming Micro App Template
 
-Dodge falling asteroids for as long as possible.
+Blank starter template for building browser-based gaming microapps and deploying them to GitHub Pages.
 
-## Play online (GitHub Pages)
+## What this template includes
 
-**[▶ Play now](https://gituserc1140.github.io/Browser_Game_Test1/)** — no install required, runs entirely in your browser.
+- `docs/index.html` — starter HTML shell
+- `docs/styles.css` — base responsive styling
+- `docs/game.js` — minimal JavaScript bootstrap point
+- `index.html` — root redirect to `docs/` for local/open-in-browser convenience
 
-## Quick start (one command)
+## Create a new game from this template
 
-```bash
-python launch.py
-```
+1. Click **Use this template** on GitHub.
+2. Name your new repository.
+3. Clone the new repo and replace `docs/game.js` with your game logic.
+4. Update `docs/index.html` markup and `docs/styles.css` styling as needed.
 
-That's it. `launch.py` will:
-1. Install the required Python packages automatically.
-2. Start the local game server.
-3. Open your default browser at `http://127.0.0.1:5000`.
+## Deploy to GitHub Pages
 
-**Requirements:** Python 3.9 or later (no other installs needed beforehand).
+1. In your game repo, go to **Settings → Pages**.
+2. Under **Build and deployment**, choose:
+   - **Source:** Deploy from a branch
+   - **Branch:** `main` (or your default branch)
+   - **Folder:** `/docs`
+3. Save and wait for GitHub Pages to publish.
 
-## Manual start (if you prefer)
+After publish, your app is available at:
 
-```bash
-pip install -r requirements.txt
-python app.py
-```
-
-Then open `http://127.0.0.1:5000` in your browser.
-
-## Play on your phone (same Wi-Fi)
-
-1. Start the server with LAN mode enabled:
-   ```bash
-   HOST=0.0.0.0 python launch.py
-   ```
-2. Find your computer's local IP (e.g. `192.168.1.25`).
-3. On your phone, open: `http://<your-computer-ip>:5000`
-4. Use the on-screen D-pad — it appears automatically on touch devices.
-
-## Controls
-
-| Input | Action |
-|---|---|
-| Arrow keys / WASD | Move the ship |
-| On-screen D-pad | Move the ship (mobile / touch) |
-| Start / Play Again button | Begin or restart |
-
-Every asteroid that flies past scores a point. Collisions cost health. The game ends when health reaches 0.
-
-## Repository layout
-
-- `docs/` — static build served by GitHub Pages (self-contained, no server needed)
-  - `engine.js` — game simulation logic (JS port of `api_client.py`)
-  - `game.js` — rendering and input handling
-  - `index.html` / `styles.css` — UI
-  - `static/` — sprites and images
-- `launch.py` — one-click launcher
-- `app.py` — Flask server (UI + game state endpoints)
-- `api_client.py` — core game logic (physics, collisions, entities)
-- `ui/` — HTML / CSS / JavaScript front-end
-- `static/` — game assets (sprites, images, sounds)
-- `config/` — gameplay constants
-
-## API endpoints
-
-- `POST /api/start` — create and start a new game
-- `POST /api/update` — send input + `dt`, receive updated state JSON
-- `GET /api/state/<game_id>` — fetch current state JSON
-
+`https://<your-username>.github.io/<your-repo>/`
